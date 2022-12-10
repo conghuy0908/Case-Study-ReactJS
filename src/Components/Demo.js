@@ -1,13 +1,13 @@
 import {React} from "react";
 import {FaBookOpen,FaInbox,FaCalendar,FaPlus} from 'react-icons/fa'
 import { Link, useNavigate,Route,Routes } from "react-router-dom";
-import Inbox from './Components/Inbox'
-import Login from './Components/Login';
-import UpComing from './Components/UpComing'
-import Register from './Components/Register'
-import Projects from './Components/Projects'
+import Inbox from './Inbox'
+import Login from './Login';
+import UpComing from './UpComing'
+import Register from './Register'
+import Projects from './Projects'
 
-const App = () => {
+const Demo = () => {
     const navigate = useNavigate()
     const handleLogin = () =>{
         navigate('/login')
@@ -19,7 +19,7 @@ return(
     <div className="container-fluid">
         <div className="container-fluid" style={{background:"#F5F5F5"}}>
             <div className="row">
-                <div className="col-sm" >
+                <div className="col-sm d-flex justify-content-center" >
                 <Link to='/' className="navbar-brand" > 
                 <h4 className="mt-2">
                 <FaBookOpen style={{width: '40px',height:'40px'}} />
@@ -32,10 +32,10 @@ return(
                 <div className="col-sm">
                     <div className="container">
                         <div className="row">
-                            <div className="col-sm-5 d-flex justify-content-end">
+                            <div className="col-sm-5 text-center">
                             <button type="button" className="btn btn-success mt-2" onClick={handleLogin}>Login</button>
                             </div>
-                            <div className="col-sm-5 text-center">
+                            <div className="col-sm-5 text-cneter">
                             <button type="button" className="btn btn-primary mt-2"onClick={handleRegister} >Start for Free</button>
                             </div>
                             <div className="col-sm-2 mt-3" >
@@ -103,4 +103,4 @@ return(
     </div>
 )
 }
-export default App;
+export default Demo;
