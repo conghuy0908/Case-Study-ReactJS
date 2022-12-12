@@ -7,6 +7,9 @@ import UpComing from './Components/UpComing'
 import Register from './Components/Register'
 import Projects from './Components/Projects'
 
+
+
+
 const App = () => {
     const navigate = useNavigate()
     const handleLogin = () =>{
