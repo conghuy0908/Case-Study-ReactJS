@@ -17,7 +17,7 @@ const Inbox = () => {
     const [discrip,setDiscrip] = useState();
     const [todos,setTodos] = useState(storageJobs ?? [] );
     const [showdialog,setShowDialog] = useState(false)
-    const [deleteId,setDeleteId] = useState('')
+    const [deleteId,setDeleteId] = useState()
     const [checked,setChecked] = useState(true)
     const [showform,setShowForm] = useState(false)
     const [count,setCount] = useState(0)
@@ -34,14 +34,17 @@ const Inbox = () => {
         setShowDialog(false)
     }
     const handleDelete = () =>{
-        const newTodos = todos.filter(todo => todo.id !== deleteId)
-        setTodos(newTodos)
-        // setTodos(pre => {
-        //     // const newArr = [...pre]
-        //     // return newArr.filter(todo => todo.id !== deleteId)
-        // })
+        // const newTodos = todos.filter(todo => todo.id !== deleteId)
+        // setTodos(newTodos)
+        setTodos(pre => {
+            const newArr = [...pre]
+            console.log(newArr);
+            return newArr.filter(todo => todo.id !== deleteId)
+        })
         setShowDialog(false)
         setCount(count - 1)
+        localStorage.removeItem("jobs")
+        
     }
     const handleShowDialog = (id) =>{
     setDeleteId(id)
@@ -77,6 +80,9 @@ const Inbox = () => {
     const handleCloseForm = () =>{
         setShowForm(false)
     }
+
+  
+
 
     return(
         <div className='container-fluid'>
@@ -132,6 +138,7 @@ const Inbox = () => {
             </Button>
         </Modal.Footer>
         </Modal>
+
             <div className='row'>
                 <div className='col-10'>
                 <nav className="navbar navbar-light">
@@ -212,11 +219,10 @@ const Inbox = () => {
                                                             <div className='col-2'>
                                                                 <button onClick={() => handleShowDialog(todo.id)} className="btn btn-danger"><FaTrash/>
                                                             </button>  
-</div>
+                                                        </div>
                                                             <div className='col-2'>                                                    
-                                                                {/* <button onClick={() => handleEdit(todo.id)} className="btn btn-warning"><FaPen/> */}
-                                                            {/* </button>       */}
-</div>
+                                                                {/* <button onClick={() => handleShowEdit(todo.id)} className="btn btn-warning"><FaPen/></button>                     */}
+                                                            </div>
                                                         </div>
                                                     </td>
                                                     </tr>
