@@ -4,14 +4,9 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 
-export const dataBase = [];
-
 const Inbox = () => {
     const storageJobs = JSON.parse(localStorage.getItem('jobs'))
 
-
-    // const [show,setShow] = useState(true)
-    // const [showdate,setShowDate] = useState(true);
     const [date,setDate] = useState();
     const [task,setTask] = useState();
     const [discrip,setDiscrip] = useState();
@@ -80,10 +75,6 @@ const Inbox = () => {
     const handleCloseForm = () =>{
         setShowForm(false)
     }
-
-  
-
-
     return(
         <div className='container-fluid'>
             <Modal show={showdialog} onHide={handleClose} >
@@ -221,7 +212,6 @@ const Inbox = () => {
                                                             </button>  
                                                         </div>
                                                             <div className='col-2'>                                                    
-                                                                {/* <button onClick={() => handleShowEdit(todo.id)} className="btn btn-warning"><FaPen/></button>                     */}
                                                             </div>
                                                         </div>
                                                     </td>
