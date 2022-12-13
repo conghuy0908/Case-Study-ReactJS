@@ -25,7 +25,7 @@ const Inbox = () => {
     const handleChecked = (data) =>{
         if(data === "checked" ){
             if(checked === true ){
-                console.log(data,"hello");
+                alert("Completed")
             }
             setChecked(!checked)
         }
