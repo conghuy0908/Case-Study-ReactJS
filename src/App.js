@@ -89,6 +89,7 @@ return(
                 </div>
                 <div className="col-9">
                 <Routes>
+                <Route path='/' element={<Inbox/>}/>
                 <Route path='/inbox' element={<Inbox/>}/>
                 <Route path='/projects' element={<Projects/>}/>
                 <Route path='/upcoming' element={<UpComing/>}/>
